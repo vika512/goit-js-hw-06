@@ -3,13 +3,15 @@ const inputField = document.querySelector('#validation-input');
 inputField.addEventListener('blur', checkValidity);
 
 function checkValidity() {
-    if (event.currentTarget.value.length < 6) {
-        inputField.classList.remove('valid');
-        inputField.classList.add('invalid');
+    console.log(Number(inputField.dataset.length));
+    console.log(event.currentTarget.value.length)
+    if (Number(inputField.dataset.length) === event.currentTarget.value.length) {
+        inputField.classList.remove('invalid');
+        inputField.classList.add('valid');
     }
 
     else {
-        inputField.classList.remove('invalid');
-        inputField.classList.add('valid');
+        inputField.classList.remove('valid');
+        inputField.classList.add('invalid');
     }
 };
