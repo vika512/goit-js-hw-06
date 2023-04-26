@@ -7,10 +7,10 @@ inputText.addEventListener('input', onTextInput);
 
 function onTextInput(event) {
     const inputData = event.currentTarget.value;
-    if (inputData.length >= 1) {
-        outputText.textContent = inputData;
+    if (inputData.length === 0 || inputData.trim() === '') {
+        outputText.textContent = 'Anonymous';
     }
     else {
-        outputText.textContent = 'Anonymous';
+        outputText.textContent = inputData;
     };
 }
